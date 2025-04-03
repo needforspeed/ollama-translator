@@ -1,5 +1,5 @@
 # ollama-translator
-[English](https://github.com/wolfreka/ollama-translator/blob/main/README.md) | [中文版](https://github.com/wolfreka/ollama-translator/blob/main/README-CN.md)
+[English](https://github.com/needforspeed/ollama-translator/blob/main/README.md) | [中文版](https://github.com/needforspeed/ollama-translator/blob/main/README-CN.md)
 
 ollama-translator is a Python-based command-line tool designed to translate Markdown files using a local Ollama API model. This tool supports multiple languages and maintains the formatting integrity of Markdown documents during translation.
 
@@ -33,7 +33,7 @@ en: English
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-github-username/ollama-translator.git
+git clone https://github.com/needforspeed/ollama-translator.git
 cd ollama-translator
 ```
 

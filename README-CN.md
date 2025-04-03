@@ -1,5 +1,5 @@
 # ollama-translator
-[English](https://github.com/wolfreka/ollama-translator/blob/main/README.md) [中文版](https://github.com/wolfreka/ollama-translator/blob/main/README-CN.md)
+[English](https://github.com/needforspeed/ollama-translator/blob/main/README.md) [中文版](https://github.com/needforspeed/ollama-translator/blob/main/README-CN.md)
 
 ollama-translator 翻译器是一个基于 Python 的命令行工具，设计用来使用本地的 Ollama API 模型翻译 Markdown 文件。这个工具支持多种语言，能够在翻译过程中保持 Markdown 文档的格式完整性。
 
@@ -33,7 +33,7 @@ en: 英语
 克隆仓库：
 
 ```bash
-git clone https://github.com/your-github-username/ollama-translator.git
+git clone https://github.com/needforspeed/ollama-translator.git
 cd ollama-translator
 ```
 
