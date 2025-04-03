@@ -6,7 +6,7 @@ import time
 # API configuration variables
 API_URL = "http://localhost:11434"
 API_KEY = os.getenv('OLLAMA_API_KEY', 'ollama')
-API_MODEL = "qwen2:7b"
+API_MODEL = "qwen2.5:7b"
 API_TEMPERATURE = 0.5
 API_MAX_TOKENS = 1024
 API_ENDPOINT = "/v1/chat/completions"
@@ -105,9 +105,27 @@ def translate_full(full_text, input_lang, target_lang, client):
             "temperature": API_TEMPERATURE,
             "max_tokens": API_MAX_TOKENS
         },
-        timeout=30
+        timeout=60
     )
     elapsed_time = time.time() - start_time
+    if response.status_code != 200:
+        print(f"Error: {response.status_code} - {response.text}")
+        return None, elapsed_time
+    if response.json().get("error"):
+        print(f"Error: {response.json()['error']}")
+        return None, elapsed_time
+    if "choices" not in response.json():
+        print("Error: No choices in response")
+        return None, elapsed_time
+    if len(response.json()["choices"]) == 0:
+        print("Error: No choices in response")
+        return None, elapsed_time
+    if "message" not in response.json()["choices"][0]:
+        print("Error: No message in response")
+        return None, elapsed_time
+    if "content" not in response.json()["choices"][0]["message"]:
+        print("Error: No content in response")
+        return None, elapsed_time
     return response.json()["choices"][0]["message"]["content"], elapsed_time
 
 def translate_file(input_path, output_path, base_lang, target_lang, client):
